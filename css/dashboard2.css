@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    font-size: 62.5%;
+    --dark: hsl(214, 33%, 19%);
+    --ldark: #0e1c2f;
+    --blue: #2774F6;
+    --lblue: #01D7B1;
+    --white: hsl(0, 0%, 90%);
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+h1 {
+    font-size: 6rem;
+    padding: 2rem 0;
+}
+
+h2 {
+    font-size: 5rem;
+    padding: 1.7rem 0;
+}
+
+h3 {
+    font-size: 4rem;
+    padding: 1.5rem 0;
+}
+
+h4 {
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+h5 {
+    font-size: 2rem;
+    padding: 0.8rem 0;
+}
+
+h6 {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+p {
+    font-size: 1.6rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    display: block;
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--dark);
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar.close {
+    width: 60px;
+}
+
+
+
+
+
+
+.sidebar-logo {
+    display: flex;
+    color: var(--white);
+    padding: 10px;
+    justify-content: center;
+    cursor: context-menu;
+}
+
+.sidebar .sidebar-logo h4:first-child {
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.close .sidebar-logo h4:first-child {
+    opacity: 1;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar .sidebar-logo h4:nth-child(2) {
+    opacity: 1;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.sidebar.close .sidebar-logo h4:nth-child(2) {
+    opacity: 0;
+    width: 0;
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+
+}
+
+
+
+
+
+
+
+.sidebar-menu li {
+    transition: all 0.3s ease-in-out;
+    cursor: context-menu;
+    position: relative;
+}
+
+.sidebar-menu li.active {
+    background-color: var(--ldark);
+}
+
+
+.sidebar-menu li:hover {
+    background-color: var(--ldark);
+}
+
+
+
+.sidebar-menu li .main-link {
+    padding: 5px 0;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.sidebar-menu li .main-link i:first-child {
+    font-size: 22px;
+    padding: 5px 20px;
+}
+
+
+.sidebar-menu li .main-link span {
+    font-size: 18px;
+    padding: 5px;
+}
+
+
+.sidebar-menu li .main-link .arrow-holder {
+    padding: 5px 20px 5px 30px;
+}
+
+.sidebar-menu li .main-link .arrow-holder i {
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-menu li:hover .main-link .arrow-holder i {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+.sidebar-menu li .sub-menu li {
+    font-size: 16px;
+    padding: 2px 5px 2px 67px;
+    color: var(--white);
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.sidebar-menu li .sub-menu li:hover {
+    opacity: 1;
+}
+
+
+.sidebar-menu li .sub-menu {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-menu li:hover .sub-menu {
+    height: auto;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+.sidebar.close .sidebar-menu li .sub-menu {
+    position: absolute;
+    background-color: var(--ldark);
+    top: 0;
+    left: 0%;
+    width: 250%;
+    text-align: center;
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.close .sidebar-menu li .sub-menu li {
+    padding: 2px 5px 2px;
+}
+
+.sidebar.close .sidebar-menu li:hover .sub-menu {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    pointer-events: auto;
+    left: 100%;
+}
+
+
+
+
+
+
+
+
+.sidebar .profile-details {
+    position: fixed;
+    bottom: 0;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    background-color: var(--ldark);
+    transition: all 0.3s ease-in-out;
+    color: white;
+    cursor: context-menu;
+}
+
+.sidebar.close .profile-details {
+    padding: 0;
+    display: block;
+    height: auto;
+    width: 60px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.sidebar .profile-details .profile-image {
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    margin: 8px;
+    border-radius: 16px;
+    transition: all 1s ease-in-out;
+    background-color: var(--dark);
+}
+
+.sidebar .profile-details .profile-image img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.close .profile-details .profile-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
+    margin: 8px 4px;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--ldark);
+}
+
+.sidebar.close .profile-details .profile-image img {
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+.sidebar .profile-details .profile-info {
+    padding: 5px;
+    transition: all 1s ease-in-out;
+}
+
+
+.sidebar .profile-details .profile-info .profile-name {
+    font-size: 16px;
+}
+
+.sidebar .profile-details .profile-info .profile-job {
+    font-size: 11px;
+}
+
+.sidebar .profile-details .log-out {
+    font-size: 25px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+
+
+
+.sidebar.close .profile-details .profile-info,
+.sidebar.close .profile-details .log-out {
+    transition: all 1s ease-in-out;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+.body-2 {
+    margin: 10px 10px 10px 260px;
+    transition: all 0.3s ease-in-out;
+}
+
+.body-2.open {
+    margin: 10px 10px 10px 70px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+.home .main-title {
+    text-align: center;
+}
+
+
+.home .main-title h3 {
+    text-align: center;
+    font-weight: 500;
+}
+
+.home:hover .main-title h3,
+.outer-wrapper:hover .sub-title h4 {
+    display: inline-block;
+    background: linear-gradient(45deg, blue, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+
+
+.home-info {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.home-info .outer-wrapper {
+    width: 35%;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-info .outer-wrapper .sub-title h4 {
+    font-weight: 400;
+}
+
+.home-info .outer-wrapper .combination {
+    position: relative;
+    font-size: 16px;
+    text-align: right;
+}
+
+.home-info .outer-wrapper .combination input {
+    width: 50%;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.home-info .outer-wrapper .combination label {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    margin: 5px 0;
+
+}
+
+.home-info .outer-wrapper .combination2 label {
+    left: 30%;
+}
+
+
+.home-info .outer-wrapper .combination:has(input:focus) label {
+    display: inline-block;
+    background: linear-gradient(45deg, blue, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+.sign-up-btn{
+    background-color: var(--ldark);
+    color: var(--white);
+    margin: auto;
+    display: block;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 1200px) {
+    .home-info .outer-wrapper {
+        width: 50%;
+    }
+    
+    .home-info .outer-wrapper .combination label {
+        left: 0%;    
+    }
+
+    .home-info .outer-wrapper .combination2 label {
+        left: 30%;
+    }
+      
+}
+
+
+@media screen and (max-width : 800px) {
+    .home-info .outer-wrapper {
+        width: 60%;
+    }
+      
+}
+
+
+@media screen and (max-width : 600px) {
+    .home-info .outer-wrapper {
+        width: 70%;
+    }
+      
+}
+
+
+
+@media screen and (max-width : 600px) {
+    .home-info .outer-wrapper {
+        width: 100%;
+    }
+      
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="./js/dashboard.js" defer></script>
+</head>
+
+<body>
+
+    <div class="bg"><img src="./img/dashboard/bg.jpg" alt=""></div>
+
+    <div class="black-disc"></div>
+
+
+    <div class="log-wrapper">
+
+        <div class="log-cover">
+
+            <div class="log-in-cover">
+
+                <h1 class="log-in">Log In</h1>
+
+                <p>mail : test@gmail.com</p>
+                <p>password : Test@123</p>
+
+                <div class="input-email">
+                    <label for="mail" class="user-logo"><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" name="mail" placeholder="Enter Your Mail">
+                </div>
+
+                <div class="input-password">
+                    <label for="password" class="password-key"><i class="fa-solid fa-key"></i></label>
+                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <label class="password-eye"><i class="fa-solid fa-eye"></i></label>
+                    <label class="password-eye-slash"><i class="fa-solid fa-eye-slash"></i></label>
+                </div>
+
+                <div class="log-link">
+                    <label for="error-message" class="error-message"></label>
+                    <div class="sign-in-btn primary-btn">Sign In</div>
+                    <div class="sign-up-link primary-link">Create Your New Account</div>
+                </div>
+            </div>
+
+
+            <div class="sign-up-cover">
+
+                <h1 class="sign-up">Sign Up</h1>
+
+                <div class="input-name">
+                    <label for="name" class="user-name"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" name="name" placeholder="Enter Your Full Name">
+                </div>
+
+                <div class="input-email">
+                    <label for="mail" class="user-logo"><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" name="mail" placeholder="Enter Your Mail">
+                </div>
+
+                <div class="input-date">
+                    <label for="date" class="user-date"><i class="fa-solid fa-calendar-days"></i></label>
+                    <input type="text" id="" name="date" placeholder="Enter Your Date of Birth" onfocus="TtoD()"
+                        onblur="DtoT()">
+                </div>
+
+                <div class="input-password">
+                    <label for="password" class="password-key"><i class="fa-solid fa-key"></i></label>
+                    <input type="password" name="password" placeholder="Enter Your Password">
+                    <label class="password-eye"><i class="fa-solid fa-eye"></i></label>
+                    <label class="password-eye-slash"><i class="fa-solid fa-eye-slash"></i></label>
+                </div>
+
+                <div class="log-link">
+                    <label for="error-message" class="error-message"></label>
+                    <div class="sign-up-btn primary-btn">Sign Up</div>
+                    <div class="sign-in-link primary-link">Already Have An Account Sign in</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

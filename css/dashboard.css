@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+h1 {
+    font-size: 6rem;
+    padding: 2rem 0;
+}
+
+h2 {
+    font-size: 5rem;
+    padding: 1.7rem 0;
+}
+
+h3 {
+    font-size: 4rem;
+    padding: 1.5rem 0;
+}
+
+h4 {
+    font-size: 3rem;
+    padding: 1rem 0;
+}
+
+h5 {
+    font-size: 2rem;
+    padding: 0.8rem 0;
+}
+
+h6 {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+p {
+    font-size: 1.6rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+
+
+.primary-btn {
+    color: white;
+    border: 2px solid white;
+    font-size: 1.5rem;
+    padding: 1em 2em;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+}
+
+.primary-btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -2px;
+    left: -2px;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(45deg, red, blue);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.primary-btn:hover {
+    border-color: transparent;
+}
+
+.primary-btn:hover::after {
+    opacity: 1;
+}
+
+
+
+.primary-link {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5em 0.5em 0.2em;
+    transition: all 0.2s ease-in-out;
+    margin: 20px 0 10px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.primary-link:hover {
+    border-color: white;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+
+
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bg::after {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.788);
+}
+
+.bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.black-disc {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: -50vw;
+    width: 200vw;
+    height: 400vh;
+    background-color: black;
+    transform: translateY(400vh);
+    transition: 2s;
+}
+
+.black-disc.active {
+    transform: translateY(-400vh);
+    height: 0vh;
+}
+
+
+
+
+
+
+
+
+
+.log-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.log-cover {
+    width: 80%;
+    max-width: 500px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+
+.log-in-cover,
+.sign-up-cover {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 5rem;
+}
+
+.sign-up-cover,
+.log-in-cover.hide {
+    display: none;
+}
+
+.log-in-cover,
+.sign-up-cover.hide {
+    display: block;
+}
+
+
+.log-cover h1 {
+    background: linear-gradient(45deg, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 200;
+    text-align: center;
+}
+
+.log-cover input[type="text"],
+.log-cover input[type="password"],
+.log-cover input[type="email"],
+.log-cover input[type="date"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    padding: 5px 5px 5px 40px;
+}
+
+.log-cover ::placeholder {
+    color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23ffffff" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    position: absolute;
+    padding: 10px;
+    bottom: 18px;
+    font-size: 19px;
+    left: 5px;
+}
+
+
+.input-email,
+.input-password,
+.input-name,
+.input-date {
+    width: 100%;
+    position: relative;
+    padding: 20px 5px;
+}
+
+
+.user-logo,
+.password-key,
+.user-name,
+.user-date {
+    position: absolute;
+    padding: 10px;
+    bottom: 18px;
+    font-size: 17px;
+    left: 5px;
+}
+
+/* .password-key.anim {
+    background: linear-gradient(45deg, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+} */
+
+.password-eye-slash,
+.password-eye {
+    position: absolute;
+    padding: 10px;
+    bottom: 18px;
+    font-size: 17px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.password-eye-slash {
+    display: none;
+}
+
+
+.log-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 5px 20px;
+    width: 100%;
+}
+
+.error-message {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
